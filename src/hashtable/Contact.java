@@ -14,5 +14,5 @@ public class Contact {
     
     String name = new String();
     int phone ;
-    int linearProb = 0; //
+    int linearProb = 0; //to show whether linear prob is applyed on the object or not 
 }
