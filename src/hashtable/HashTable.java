@@ -35,7 +35,9 @@ public class HashTable {
         //save hash table to file 
         
         File f = new File();
-        f.SavehashTableToFile(hashTable, "hashTable");
+        String fileName = new String();
+        fileName = "hashTable";
+        f.SavehashTableToFile(hashTable, fileName);
         
         /******************************************************************************/
         /******************************************************************************/
@@ -72,10 +74,37 @@ public class HashTable {
             //pass contact name to hash function to get its hash value
             
             HashFunction hF = new HashFunction();
-            long hashValue ;
+            int hashValue ;
             hashValue = hF.calc_hash(newContact.name, hashTableSize);
             
             System.out.println("hash value : " + hashValue);
+            
+            //read hash table from file 
+            
+            
+            hashTable = f.readhashTable("hashTable", hashTableSize);
+            
+            //check whether the index of the hash value is empty or not 
+            
+            if (hashTable[hashValue] == null) {  // it's ok to store the new contact in this index 
+                
+                hashTable[hashValue]  = newContact; 
+            }else{ // this index isn't available to store the new contact in 
+                
+                //linear prob
+                
+                //create linearProb object to access linearProb method
+                
+                linearProb l = new linearProb();
+                
+                //apply linear prob on the new contact 
+                
+                int emptyIndex = l.linearProb(hashValue, hashTable, newContact);
+                
+                System.out.println("check contact.linearProb : " + newContact.linearProb);
+                
+                
+            }
                     
         }else if (operation == 2) { // search
             

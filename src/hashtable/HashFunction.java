@@ -15,10 +15,10 @@ public class HashFunction {
  * Hash function that receives contact name and returns the hash value 
  * @author row
  */
-    public static long calc_hash( String key, int table_size) {
+    public static int calc_hash( String key, int table_size) {
         
         int i, l = key.length();
-        long hash = 0;
+        int hash = 0;
         
         for (i = 0; i < l; i++) {
             
