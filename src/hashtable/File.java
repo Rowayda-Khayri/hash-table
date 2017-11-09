@@ -21,14 +21,16 @@ import java.util.List;
 public class File {
     
     
-    public void SaveDataToFile(Contact[] hashTable, String fileName){
+    public void SavehashTableToFile(Contact[] hashTable, String fileName){
         
         // The name of the file to create
         fileName = fileName + ".txt";
         
-        String delimiter = new String();
+        String delimiter1 = new String();
+        String delimiter2 = new String();
         
-        delimiter = "\n";
+        delimiter1 = "\n";
+        delimiter2 = ",";
 
         //save to file
         try {
@@ -43,8 +45,14 @@ public class File {
             
             for(int i = 0;i< hashTable.length;i++){
                 
+//                System.out.println("name" + hashTable[i] );
                 //write value 
-                bufferedWriter.write(hashTable[i] + delimiter);
+                if (hashTable[i] != null) {
+                    bufferedWriter.write(hashTable[i].name + delimiter2 +  hashTable[i].phone + delimiter2 +  hashTable[i].linearProb + delimiter1);
+                }else{
+                    bufferedWriter.write(hashTable[i] + delimiter1 );
+                }
+                
             }
             
             //  close file
@@ -62,16 +70,16 @@ public class File {
     }
     
     
-//    public Contact[] readData(String fileName , int size){
+    
+//    public Contact[] readhashTable(String fileName , int size){
 //        
-//        Contact[] data = new Contact[size];
+//        Contact[] hashTable = new Contact[size];
 //        
 //        // The name of the file to open
 //        fileName = fileName + ".txt";
 //
 //        // This will reference one line at a time
-////        String line = null ;
-//        Contact[] line = null ;
+//        String line = null ;
 //
 //        
 //        try {
@@ -83,12 +91,17 @@ public class File {
 //            BufferedReader bufferedReader = 
 //                new BufferedReader(fileReader);
 //
-//            while((line = bufferedReader.readLine()) != null) {
+//            for(int i = 0 ; i< size ; i++){
 //                
-////                data.add(Integer.parseInt(line));
-//
-//                data = line;
-//            }   
+//                while((line = bufferedReader.readLine()) != null) {
+//                
+////                    hashTable.add(Integer.parseInt(line));
+//                    hashTable[i] = line;
+//                }  
+//                
+//            }
+//            
+//            
 //
 //            // Always close files.
 //            bufferedReader.close();         
@@ -105,13 +118,16 @@ public class File {
 //            
 //        }
 //        
-//        List<Integer> specificSizeList = new ArrayList<Integer>(data.subList(0,size)); ///not size - 1
+//        List<Integer> specificSizeList = new ArrayList<Integer>(hashTable.subList(0,size)); ///not size - 1
 //
 //        ArrayList<Integer> specificSizeArrayList = new ArrayList<Integer>(specificSizeList);
 //        
 //        
 //        return specificSizeArrayList;
 //    }
+    
+    
+    
     
     
     

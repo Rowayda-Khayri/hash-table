@@ -23,12 +23,12 @@ public class HashTable {
         int hashTableSize = 1009;
         Contact[] hashTable = new Contact[hashTableSize];
         
-//        Contact[] hashTable = new Contact[4];
-//        String[] hashTable = new String[4];
-        
         System.out.println("hashTable to write " + Arrays.toString(hashTable));
+        
+        //save hash table to file 
+        
         File f = new File();
-        f.SaveDataToFile(hashTable, "hashTable");
+        f.SavehashTableToFile(hashTable, "hashTable");
     }
     
 }
