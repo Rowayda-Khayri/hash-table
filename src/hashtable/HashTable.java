@@ -39,14 +39,25 @@ public class HashTable {
         System.out.println("2 - Search for Contact ");
         System.out.println("3 - Delete Contact ");
         int operation = reader.nextInt(); // Scans the next token of the input as an int.
-        //once finished
-        reader.close(); 
+//        //once finished
+//        reader.close(); 
         
         System.out.println("the user choosed : " + operation);
         
         if(operation ==1){ //insertion
             
+            //scan for new contact 
             
+            Contact newContact = new Contact();
+            
+            Scanner contactReader = new Scanner(System.in);  // Reading from System.in
+            System.out.println("Enter name : ");
+            newContact.name = contactReader.next(); // Scans the next token of the input as an contact name
+//            reader.close(); 
+            
+            System.out.println("newContact name : " + newContact.name);
+
+                    
         }else if (operation == 2) { // search
             
             
