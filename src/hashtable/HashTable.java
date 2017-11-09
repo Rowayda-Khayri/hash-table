@@ -60,6 +60,13 @@ public class HashTable {
             System.out.println("newContact lp : " + newContact.linearProb);
             System.out.println("newContact : " + newContact);
 
+            //pass contact name to hash function to get its hash value
+            
+            HashFunction hF = new HashFunction();
+            long hashValue ;
+            hashValue = hF.calc_hash(newContact.name, hashTableSize);
+            
+            System.out.println("hash value : " + hashValue);
                     
         }else if (operation == 2) { // search
             
