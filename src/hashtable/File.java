@@ -20,7 +20,10 @@ import java.util.List;
  */
 public class File {
     
-    
+/**
+ *Save passed hash table in a file.
+ * @author row
+ */
     public void SavehashTableToFile(Contact[] hashTable, String fileName){
         
         // The name of the file to create
@@ -55,6 +58,8 @@ public class File {
                 
             }
             
+            System.out.println("Hash table is saved to file :) ");
+            
             //  close file
             bufferedWriter.close();
         }
@@ -70,61 +75,73 @@ public class File {
     }
     
     
-    
-//    public Contact[] readhashTable(String fileName , int size){
-//        
-//        Contact[] hashTable = new Contact[size];
-//        
-//        // The name of the file to open
-//        fileName = fileName + ".txt";
-//
-//        // This will reference one line at a time
-//        String line = null ;
-//
-//        
-//        try {
-//            // FileReader reads text files in the default encoding.
-//            FileReader fileReader = 
-//                new FileReader(fileName);
-//
-//            // Always wrap FileReader in BufferedReader.
-//            BufferedReader bufferedReader = 
-//                new BufferedReader(fileReader);
-//
-//            for(int i = 0 ; i< size ; i++){
-//                
-//                while((line = bufferedReader.readLine()) != null) {
-//                
-////                    hashTable.add(Integer.parseInt(line));
-//                    hashTable[i] = line;
-//                }  
-//                
-//            }
-//            
-//            
-//
-//            // Always close files.
-//            bufferedReader.close();         
-//        }
-//        catch(FileNotFoundException ex) {
-//            System.out.println(
-//                "Unable to open file '" + 
-//                fileName + "'");                
-//        }
-//        catch(IOException ex) {
-//            System.out.println(
-//                "Error reading file '" 
-//                + fileName + "'");                  
-//            
-//        }
-//        
-//        List<Integer> specificSizeList = new ArrayList<Integer>(hashTable.subList(0,size)); ///not size - 1
-//
-//        ArrayList<Integer> specificSizeArrayList = new ArrayList<Integer>(specificSizeList);
-//        
-//        
-//        return specificSizeArrayList;
-//    }
+    /**
+     *Read hash table from file
+     * @author row
+     */
+    public Contact[] readhashTable(String fileName , int size){
+        
+        Contact[] hashTable = new Contact[size];
+        
+        String contact = new String(); // to save 
+        
+        
+        // The name of the file to open
+        fileName = fileName + ".txt";
+
+        // This will reference one line at a time
+        String line = null ;
+
+        
+        try {
+            // FileReader reads text files in the default encoding.
+            FileReader fileReader = 
+                new FileReader(fileName);
+
+            // Always wrap FileReader in BufferedReader.
+            BufferedReader bufferedReader = 
+                new BufferedReader(fileReader);
+
+            for(int i = 0 ; i< size ; i++){
+                
+                while((line = bufferedReader.readLine()) != null) {
+                
+                    contact = line;
+                    
+                    //split contact with ',' to get each property 
+                    String splittedContact[] = new String[3];
+                    
+                    splittedContact = contact.split(",");
+                    
+                    //set properties
+                    hashTable[i].name = splittedContact[0];
+                    hashTable[i].phone = Integer.parseInt(splittedContact[1]);
+                    hashTable[i].linearProb = Integer.parseInt(splittedContact[2]);
+                    
+                }  
+                
+            }
+            
+            
+
+            // Always close files.
+            bufferedReader.close();         
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println(
+                "Unable to open file '" + 
+                fileName + "'");                
+        }
+        catch(IOException ex) {
+            System.out.println(
+                "Error reading file '" 
+                + fileName + "'");                  
+            
+        }
+        
+        
+        return hashTable;
+    }
     
     
     
