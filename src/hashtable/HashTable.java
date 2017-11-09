@@ -18,6 +18,13 @@ public class HashTable {
      */
     public static void main(String[] args) {
         
+                        /*=====================================*/
+                        /*Create Hash Table and save it to file*/
+                        /*=====================================*/
+                        
+                /**make this only for the first time to run the app**/
+                /*--------------------------------------------------*/
+                        
         //create hash table 
         
         int hashTableSize = 1009;
@@ -30,6 +37,8 @@ public class HashTable {
         File f = new File();
         f.SavehashTableToFile(hashTable, "hashTable");
         
+        /******************************************************************************/
+        /******************************************************************************/
         
         //scan for user operation choice
         
