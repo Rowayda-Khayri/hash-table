@@ -29,6 +29,38 @@ public class HashTable {
         
         File f = new File();
         f.SavehashTableToFile(hashTable, "hashTable");
+        
+        
+        //scan for user operation choice
+        
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        System.out.println("Choose Operation number (1 , 2 or 3 ) : ");
+        System.out.println("1 - Insert Contact ");
+        System.out.println("2 - Search for Contact ");
+        System.out.println("3 - Delete Contact ");
+        int operation = reader.nextInt(); // Scans the next token of the input as an int.
+        //once finished
+        reader.close(); 
+        
+        System.out.println("the user choosed : " + operation);
+        
+        if(operation ==1){ //insertion
+            
+            
+        }else if (operation == 2) { // search
+            
+            
+        }else if(operation == 3 ){ //deletion
+            
+        
     }
+       
+        
+        
+        
+    }
+   
+    
+    
     
 }
