@@ -104,8 +104,11 @@ public class File {
 
             for(int i = 0 ; i< size ; i++){
                 
-                while((line = bufferedReader.readLine()) != null) {
+                line = bufferedReader.readLine();
+//                while( line != null) {
+                if( line == null) {
                 
+                    System.out.println("line" + line);
                     contact = line;
                     
                     //split contact with ',' to get each property 
