@@ -22,6 +22,8 @@ public class linearProb {
         int emptyIndex = 0;
         int secondLoopFlag = 0;
         
+        System.out.println("enter linear prob method ");
+        
         newContact.linearProb = 1; // to indicate that linear prob is applied on this contact // this will help in rehashing 
         
         

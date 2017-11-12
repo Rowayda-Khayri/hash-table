@@ -8,7 +8,7 @@ package hashtable;
 import java.util.*;
 
 /**
- *
+ * The main class
  * @author row
  */
 public class HashTable {
@@ -24,21 +24,27 @@ public class HashTable {
                         
                 /**make this only for the first time to run the app**/
                 /*--------------------------------------------------*/
-                        
+         
+                
         //create hash table 
         
         int hashTableSize = 1009;
         Contact[] hashTable = new Contact[hashTableSize];
+        
         
         System.out.println("hashTable to write " + Arrays.toString(hashTable));
         
         //save hash table to file 
         
         File f = new File();
-        String fileName = new String();
-        fileName = "hashTable";
-        f.SavehashTableToFile(hashTable, fileName);
         
+        /****** //comment creating new hash table to avoid rewriting it *******/
+        
+//        String fileName = new String();
+//        fileName = "hashTable";
+//        f.SavehashTableToFile(hashTable, fileName);
+        
+                
         /******************************************************************************/
         /******************************************************************************/
         
@@ -84,12 +90,20 @@ public class HashTable {
             
             hashTable = f.readhashTable("hashTable", hashTableSize);
             
+            
+            System.out.println("stored Contact : " + hashTable[869]);
+            
             //check whether the index of the hash value is empty or not 
             
             if (hashTable[hashValue] == null) {  // it's ok to store the new contact in this index 
                 
-                hashTable[hashValue]  = newContact; 
+                System.out.println("index of hash value is empty");
+
+                newContact.saveNewContactInHashTable(hashTable, newContact, hashValue);
+                    
             }else{ // this index isn't available to store the new contact in 
+                
+                System.out.println("index of hash value is  noooot empty");
                 
                 //linear prob
                 
@@ -102,6 +116,8 @@ public class HashTable {
                 int emptyIndex = l.linearProb(hashValue, hashTable, newContact);
                 
                 System.out.println("check contact.linearProb : " + newContact.linearProb);
+                
+                System.out.println("empty index = " + emptyIndex);
                 
                 
             }
