@@ -133,6 +133,7 @@ public class File {
                     //set properties
                     
                     hashTable[i] = new Contact(); //create instance 
+                    hashTable[i].name = splittedContact[0];
                     hashTable[i].phone = Integer.parseInt(splittedContact[1]);
                     hashTable[i].linearProb = Integer.parseInt(splittedContact[2]);
                     

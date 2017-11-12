@@ -83,12 +83,13 @@ public class HashTable {
             
             System.out.println("hash value : " + hashValue);
             
+            
             //read hash table from file 
             
             File file = new File();
             hashTable = file.readhashTable("hashTable", hashTableSize);
             
-          
+          System.out.println("contact in the hash value index before entering linp method : " + hashTable[hashValue].name);
             //check whether the index of the hash value is empty or not 
             
             System.out.println("hash value +  hashTable[hashValue]" + hashValue + hashTable[hashValue]);

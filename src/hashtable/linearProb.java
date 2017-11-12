@@ -5,6 +5,8 @@
  */
 package hashtable;
 
+import java.util.Arrays;
+
 /**
  * Contain linear prob method
  * @author row
@@ -26,6 +28,8 @@ public class linearProb {
         
         newContact.linearProb = 1; // to indicate that linear prob is applied on this contact // this will help in rehashing 
         
+        
+        System.out.println("contact in the hash value index before loop : " + hashTable[hashValue].name);
         
         for(index = hashValue ;index < hashTable.length;index++){
         
@@ -49,6 +53,10 @@ public class linearProb {
             }
         }
      
+        
+        System.out.println("contact in the hash value index after loop : " + hashTable[hashValue].name);
+        
+
         
         //should return also the new contact after modifications -> create new struct 
         return emptyIndex;
