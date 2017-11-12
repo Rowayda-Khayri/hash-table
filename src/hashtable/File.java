@@ -114,7 +114,7 @@ public class File {
                 line = bufferedReader.readLine();
                 
                 
-                System.out.println("line ? : " + line);
+//                System.out.println("line ? : " + line);
 //                while( line != null) {
 //                if(line != null) {
                 if(!line.equals("null")) { // "null" not null -_-

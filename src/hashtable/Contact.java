@@ -29,7 +29,10 @@ public class Contact {
         
         // index can be the hash value or the new index returned from the linear prob method 
         
-        hashTable[index]  = this; 
+        hashTable[index] = new Contact();
+        hashTable[index].name  = this.name; 
+        hashTable[index].phone  = this.phone; 
+        hashTable[index].linearProb  = this.linearProb; 
     
     }
     

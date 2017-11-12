@@ -29,10 +29,6 @@ public class linearProb {
         
         for(index = hashValue ;index < hashTable.length;index++){
         
-//            while(!hashTable[index].equals(null)){
-//                emptyIndex = index + 1;
-//                break;
-//            }
             if(hashTable[index] ==null){ 
                 emptyIndex = index ;
                 break;
