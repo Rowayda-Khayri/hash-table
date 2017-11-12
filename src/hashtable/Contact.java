@@ -32,4 +32,13 @@ public class Contact {
         hashTable[index]  = newContact; 
     
     }
+    
+    public void setName( String name){
+    
+        this.name = name;
+        
+    }
+    
+    
+    
 }

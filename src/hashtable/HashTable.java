@@ -100,7 +100,7 @@ public class HashTable {
 
                 // save newContact in the hash table 
 //                newContact.saveNewContactInHashTable(hashTable, newContact, hashValue);
-                newContact.saveNewContactInHashTable(hashTable, newContact, 2);
+                newContact.saveNewContactInHashTable(hashTable, newContact, 0);
                     
                 //save hashTable to file after the new contact insertion 
                 file.SavehashTableToFile(hashTable, "hashTable");

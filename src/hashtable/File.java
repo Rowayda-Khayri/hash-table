@@ -131,10 +131,13 @@ public class File {
                     System.out.println(" splittedContact[0] + i + hashTable[i]:" + splittedContact[0] + i + hashTable[i]);
                     //set properties
 //                    hashTable[i].reset();
-                    hashTable[i].name = splittedContact[0];
+//                    hashTable[i].name = splittedContact[0];
+                    hashTable[i] = new Contact();
+                    hashTable[i].setName("naaaaaaaame");
 //                    hashTable[i].name = "gfgfgf";
                     hashTable[i].phone = Integer.parseInt(splittedContact[1]);
                     hashTable[i].linearProb = Integer.parseInt(splittedContact[2]);
+                    
                     
                 }  else{
                     hashTable[i]= null;
