@@ -98,10 +98,9 @@ public class HashTable {
 
                 // save newContact in the hash table 
                 newContact.saveNewContactInHashTable(hashTable, newContact, hashValue);
-//                newContact.saveNewContactInHashTable(hashTable, newContact, 6);
+//                newContact.saveNewContactInHashTable(hashTable, newContact, 1008); //just test
                     
-                //save hashTable to file after the new contact insertion 
-                file.SavehashTableToFile(hashTable, "hashTable");
+                
                 
             }else{ // this index isn't available to store the new contact in 
                 
@@ -121,8 +120,15 @@ public class HashTable {
                 
                 System.out.println("empty index = " + emptyIndex);
                 
+                //save new contact to hash table 
+                
+                newContact.saveNewContactInHashTable(hashTable, newContact, emptyIndex);
+                
                 
             }
+            
+            //save hashTable to file after the new contact insertion 
+                file.SavehashTableToFile(hashTable, "hashTable");
                     
         }else if (operation == 2) { // search
             

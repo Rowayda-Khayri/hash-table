@@ -29,8 +29,12 @@ public class linearProb {
         
         for(index = hashValue ;index < hashTable.length;index++){
         
-            if(hashTable[index] != null){
-                emptyIndex = index + 1;
+//            while(!hashTable[index].equals(null)){
+//                emptyIndex = index + 1;
+//                break;
+//            }
+            if(hashTable[index] ==null){ 
+                emptyIndex = index ;
                 break;
             }
             //if the end of hash table is reached : start from the beginning
@@ -39,7 +43,7 @@ public class linearProb {
                 
                 //check if entered this statement before i.e : searched for an empty index in all the hash table and didn't found 
                 if(secondLoopFlag ==1){ 
-                    return -1; 
+                    return -1;  //  on insertion : no empty place to save in .. on search :not found 
                 }else{
                    
                     index = -1 ; //to become 0 after incrementing it 
