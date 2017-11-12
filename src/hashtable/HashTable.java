@@ -32,14 +32,12 @@ public class HashTable {
         Contact[] hashTable = new Contact[hashTableSize];
         
         
-        System.out.println("hashTable to write " + Arrays.toString(hashTable));
+//        System.out.println("hashTable to write " + Arrays.toString(hashTable));
         
         //save hash table to file 
         
-        File f = new File();
-        
         /****** //comment creating new hash table to avoid rewriting it *******/
-        
+//        File f = new File();
 //        String fileName = new String();
 //        fileName = "hashTable";
 //        f.SavehashTableToFile(hashTable, fileName);
@@ -87,11 +85,12 @@ public class HashTable {
             
             //read hash table from file 
             
+            File file = new File();
+            hashTable = file.readhashTable("hashTable", hashTableSize);
             
-            hashTable = f.readhashTable("hashTable", hashTableSize);
             
-            
-            System.out.println("stored Contact : " + hashTable[869]);
+            System.out.println("old hash table : " + Arrays.toString(hashTable));
+            System.out.println("stored Contact : " + hashTable[386]);
             
             //check whether the index of the hash value is empty or not 
             
@@ -99,8 +98,13 @@ public class HashTable {
                 
                 System.out.println("index of hash value is empty");
 
-                newContact.saveNewContactInHashTable(hashTable, newContact, hashValue);
+                // save newContact in the hash table 
+//                newContact.saveNewContactInHashTable(hashTable, newContact, hashValue);
+                newContact.saveNewContactInHashTable(hashTable, newContact, 2);
                     
+                //save hashTable to file after the new contact insertion 
+                file.SavehashTableToFile(hashTable, "hashTable");
+                
             }else{ // this index isn't available to store the new contact in 
                 
                 System.out.println("index of hash value is  noooot empty");

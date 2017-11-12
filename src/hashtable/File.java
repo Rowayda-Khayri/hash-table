@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -29,6 +30,8 @@ public class File {
         // The name of the file to create
         fileName = fileName + ".txt";
         
+//        hashTable[0].name = "gfgf";
+//        System.out.println("hashTable inside save to file method " + Arrays.toString(hashTable));
         String delimiter1 = new String();
         String delimiter2 = new String();
         
@@ -83,6 +86,8 @@ public class File {
         
         Contact[] hashTable = new Contact[size];
         
+        System.out.println("hash table before reading " + Arrays.toString(hashTable));
+        
         String contact = new String(); // to save 
         
         
@@ -90,7 +95,7 @@ public class File {
         fileName = fileName + ".txt";
 
         // This will reference one line at a time
-        String line = null ;
+        String line ;
 
         
         try {
@@ -102,13 +107,19 @@ public class File {
             BufferedReader bufferedReader = 
                 new BufferedReader(fileReader);
 
+            
+            System.out.println("size of file to read " + size);
             for(int i = 0 ; i< size ; i++){
                 
                 line = bufferedReader.readLine();
-//                while( line != null) {
-                if( line == null) {
                 
-                    System.out.println("line" + line);
+                
+                System.out.println("line ?" + line);
+//                while( line != null) {
+//                if(line != null) {
+                if(!line.equals("null")) {
+                
+                    System.out.println("line ??" + line);
                     contact = line;
                     
                     //split contact with ',' to get each property 
@@ -116,12 +127,18 @@ public class File {
                     
                     splittedContact = contact.split(",");
                     
+                    System.out.println(" splittedContact" + Arrays.toString(splittedContact));
+                    System.out.println(" splittedContact[0] + i + hashTable[i]:" + splittedContact[0] + i + hashTable[i]);
                     //set properties
+//                    hashTable[i].reset();
                     hashTable[i].name = splittedContact[0];
+//                    hashTable[i].name = "gfgfgf";
                     hashTable[i].phone = Integer.parseInt(splittedContact[1]);
                     hashTable[i].linearProb = Integer.parseInt(splittedContact[2]);
                     
-                }  
+                }  else{
+                    hashTable[i]= null;
+                }
                 
             }
             

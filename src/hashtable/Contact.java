@@ -17,6 +17,7 @@ public class Contact {
     int linearProb = 0; //to show whether linear prob is applyed on the object or not 
  
     
+   
     /**
      * save new contact to the hash table (to the hash value or the new index after applying linear prob
      * @param hashTable
