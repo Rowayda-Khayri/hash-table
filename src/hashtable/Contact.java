@@ -25,11 +25,11 @@ public class Contact {
      * @param index 
      */
     
-    public void saveNewContactInHashTable(Contact[] hashTable , Contact newContact , int index){
+    public void saveNewContactInHashTable(Contact[] hashTable , int index){
         
         // index can be the hash value or the new index returned from the linear prob method 
         
-        hashTable[index]  = newContact; 
+        hashTable[index]  = this; 
     
     }
     

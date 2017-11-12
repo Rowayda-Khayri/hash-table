@@ -97,7 +97,7 @@ public class HashTable {
                 System.out.println("index of hash value is empty");
 
                 // save newContact in the hash table 
-                newContact.saveNewContactInHashTable(hashTable, newContact, hashValue);
+                newContact.saveNewContactInHashTable(hashTable, hashValue);
 //                newContact.saveNewContactInHashTable(hashTable, newContact, 1008); //just test
                     
                 
@@ -122,7 +122,7 @@ public class HashTable {
                 
                 //save new contact to hash table 
                 
-                newContact.saveNewContactInHashTable(hashTable, newContact, emptyIndex);
+                newContact.saveNewContactInHashTable(hashTable, emptyIndex);
                 
                 
             }
