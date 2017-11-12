@@ -117,9 +117,9 @@ public class File {
                 System.out.println("line ?" + line);
 //                while( line != null) {
 //                if(line != null) {
-                if(!line.equals("null")) {
+                if(!line.equals("null")) { // "null" not null -_-
                 
-                    System.out.println("line ??" + line);
+//                    System.out.println("line ??" + line);
                     contact = line;
                     
                     //split contact with ',' to get each property 
@@ -129,17 +129,16 @@ public class File {
                     
                     System.out.println(" splittedContact" + Arrays.toString(splittedContact));
                     System.out.println(" splittedContact[0] + i + hashTable[i]:" + splittedContact[0] + i + hashTable[i]);
+                    
                     //set properties
-//                    hashTable[i].reset();
-//                    hashTable[i].name = splittedContact[0];
-                    hashTable[i] = new Contact();
-                    hashTable[i].setName("naaaaaaaame");
-//                    hashTable[i].name = "gfgfgf";
+                    
+                    hashTable[i] = new Contact(); //create instance 
                     hashTable[i].phone = Integer.parseInt(splittedContact[1]);
                     hashTable[i].linearProb = Integer.parseInt(splittedContact[2]);
                     
                     
                 }  else{
+                    hashTable[i] = new Contact(); //create instance 
                     hashTable[i]= null;
                 }
                 

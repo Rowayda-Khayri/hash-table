@@ -30,7 +30,7 @@ public class linearProb {
         for(index = hashValue ;index < hashTable.length;index++){
         
             if(hashTable[index] != null){
-                emptyIndex = index;
+                emptyIndex = index + 1;
                 break;
             }
             //if the end of hash table is reached : start from the beginning

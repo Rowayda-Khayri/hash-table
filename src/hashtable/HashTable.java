@@ -88,19 +88,17 @@ public class HashTable {
             File file = new File();
             hashTable = file.readhashTable("hashTable", hashTableSize);
             
-            
-            System.out.println("old hash table : " + Arrays.toString(hashTable));
-            System.out.println("stored Contact : " + hashTable[386]);
-            
+          
             //check whether the index of the hash value is empty or not 
             
+            System.out.println("hash value +  hashTable[hashValue]" + hashValue + hashTable[hashValue]);
             if (hashTable[hashValue] == null) {  // it's ok to store the new contact in this index 
                 
                 System.out.println("index of hash value is empty");
 
                 // save newContact in the hash table 
-//                newContact.saveNewContactInHashTable(hashTable, newContact, hashValue);
-                newContact.saveNewContactInHashTable(hashTable, newContact, 0);
+                newContact.saveNewContactInHashTable(hashTable, newContact, hashValue);
+//                newContact.saveNewContactInHashTable(hashTable, newContact, 6);
                     
                 //save hashTable to file after the new contact insertion 
                 file.SavehashTableToFile(hashTable, "hashTable");
