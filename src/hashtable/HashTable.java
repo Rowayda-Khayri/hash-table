@@ -31,12 +31,9 @@ public class HashTable {
         int hashTableSize = 1009;
         Contact[] hashTable = new Contact[hashTableSize];
         
-        
-//        System.out.println("hashTable to write " + Arrays.toString(hashTable));
-        
         //save hash table to file 
         
-        /****** //comment creating new hash table to avoid rewriting it *******/
+        /****** //comment creating new hash table file to avoid rewriting it *******/
 //        File f = new File();
 //        String fileName = new String();
 //        fileName = "hashTable";
@@ -88,12 +85,11 @@ public class HashTable {
             
             File file = new File();
             hashTable = file.readhashTable("hashTable", hashTableSize);
-            
-          System.out.println("contact in the hash value index before entering linp method : " + hashTable[hashValue].name);
             //check whether the index of the hash value is empty or not 
             
             System.out.println("hash value +  hashTable[hashValue]" + hashValue + hashTable[hashValue]);
-            if (hashTable[hashValue] == null) {  // it's ok to store the new contact in this index 
+            
+             if (hashTable[hashValue] == null) {  // it's ok to store the new contact in this index 
                 
                 System.out.println("index of hash value is empty");
 
@@ -105,7 +101,7 @@ public class HashTable {
                 
             }else{ // this index isn't available to store the new contact in 
                 
-                System.out.println("index of hash value is  noooot empty");
+                System.out.println("index of hash value is  not empty");
                 
                 //linear prob
                 
