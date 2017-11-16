@@ -79,6 +79,11 @@ public class Operations {
                 
                 int emptyIndex = l.linearProb(hashValue, hashTable, newContact);
                 
+                 if (emptyIndex == -1) {
+                     System.out.println("Sorry, there is no space to save the new contact!");
+                 }else{
+                     System.out.println("The new contact has been saved successfully :) ");
+                 }
                 System.out.println("check contact.linearProb : " + newContact.linearProb);
                 
                 System.out.println("empty index = " + emptyIndex);
