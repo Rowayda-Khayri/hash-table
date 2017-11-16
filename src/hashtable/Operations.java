@@ -16,6 +16,8 @@ public class Operations {
     
     /**
      * Insert a new contact to the hash table.
+     * @param hashTableSize
+     * @param hashTable 
      */
     public void insert( int hashTableSize , Contact[] hashTable){
         
@@ -89,7 +91,7 @@ public class Operations {
             }
             
             //save hashTable to file after the new contact insertion 
-                file.SavehashTableToFile(hashTable, "hashTable");
+                file.SaveHashTableToFile(hashTable, "hashTable");
                     
     }
     

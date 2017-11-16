@@ -25,7 +25,7 @@ public class File {
  *Save passed hash table in a file.
  * @author row
  */
-    public void SavehashTableToFile(Contact[] hashTable, String fileName){
+    public void SaveHashTableToFile(Contact[] hashTable, String fileName){
         
         // The name of the file to create
         fileName = fileName + ".txt";

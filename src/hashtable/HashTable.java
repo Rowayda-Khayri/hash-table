@@ -34,10 +34,10 @@ public class HashTable {
         //save hash table to file 
         
         /****** //comment creating new hash table file to avoid rewriting it *******/
-//        File f = new File();
-//        String fileName = new String();
-//        fileName = "hashTable";
-//        f.SavehashTableToFile(hashTable, fileName);
+        File f = new File();
+        String fileName = new String();
+        fileName = "hashTable";
+        f.SaveHashTableToFile(hashTable, fileName);
         
                 
         /******************************************************************************/
