@@ -54,16 +54,36 @@ public class HashTable {
 
         
         System.out.println("the user choosed : " + operation);
+        Operations operationInstance = new Operations();
         
         if(operation ==1){ //insertion
             
-            Operations operationInstance = new Operations();
+            //scan for new contact 
             
-            operationInstance.insert(hashTableSize, hashTable);
+            Contact newContact = new Contact();
+            
+            System.out.println("Enter name : ");
+            newContact.name = reader.next(); // Scans the next token of the input as an contact's name
+
+            System.out.println("Enter phone : ");
+            newContact.phone = reader.nextInt(); // Scans the next token of the input as an contact's phone
+
+            operationInstance.insert(hashTableSize, hashTable , newContact);
             
         }else if (operation == 2) { // search
             
+            //scan for the contact's name
             
+            System.out.println("Enter name : ");
+            String name = new String();
+            name = reader.next(); // Scans the next token of the input as an contact's name
+            
+            
+            Contact contact = new Contact(); // to put the returned contact in 
+            
+            //search for this name in the hash table 
+            contact = operationInstance.search(name , hashTableSize , hashTable);
+
         }else if(operation == 3 ){ //deletion
             
         

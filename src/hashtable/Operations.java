@@ -19,25 +19,9 @@ public class Operations {
      * @param hashTableSize
      * @param hashTable 
      */
-    public void insert( int hashTableSize , Contact[] hashTable){
+    public void insert( int hashTableSize , Contact[] hashTable , Contact newContact){
         
-        //scan for new contact 
-            
-            Contact newContact = new Contact();
-            
-            System.out.println("Enter name : ");
-            
-            Scanner reader = new Scanner(System.in);  // Reading from System.in
-            newContact.name = reader.next(); // Scans the next token of the input as an contact's name
-
-            System.out.println("Enter phone : ");
-            newContact.phone = reader.nextInt(); // Scans the next token of the input as an contact's phone
-
-            System.out.println("newContact name : " + newContact.name);
-            System.out.println("newContact phone : " + newContact.phone);
-            System.out.println("newContact lp : " + newContact.linearProb);
-            System.out.println("newContact : " + newContact);
-
+        
             //pass contact name to hash function to get its hash value
             
             HashFunction hF = new HashFunction();
@@ -98,6 +82,66 @@ public class Operations {
             //save hashTable to file after the new contact insertion 
                 file.SaveHashTableToFile(hashTable, "hashTable");
                     
+    }
+    
+    public Contact search(String name , int hashTableSize , Contact[] hashTable){
+        
+        //pass name to hash function to get its hash value
+            
+        HashFunction hF = new HashFunction();
+        int hashValue ;
+        hashValue = hF.calc_hash(name, hashTableSize);
+
+        System.out.println("hash value : " + hashValue);
+            
+        //read hash table from file 
+        File file = new File();
+        hashTable = file.readhashTable("hashTable", hashTableSize);
+        
+        //get contact in the returned hash value 
+        
+        Contact contact = new Contact();
+        contact = hashTable[hashValue];
+        
+        //check whether the contact name in this hash value is the same as the entered name 
+        //to make sure that linear prob hasn't been applyed on inserting this contact 
+        
+        if (contact.name.equals(name)) {
+            
+            return contact;
+            
+        }else{ // Keep moving forward until finding the key, or reaching an empty spot
+            
+                
+            for(int index = hashValue + 1 ; //to start searching from the next index 
+                index != hashValue ; // to search in the array only once and avoid entring an infinite loop if contact isn't found
+                index++){
+
+                contact = hashTable[index];
+                
+                if (contact == null) {
+                    return contact; // to be checked in main to know tht null indictes "not found" 
+                
+                }else{ // not null
+                    if (contact.name.equals(name)) {
+                        return contact; // found
+                    } // if not : start the next iteration 
+                    
+                } 
+                
+                if (index == hashTable.length - 1 ) { //reached the end of the array
+                    
+                    //start from the beginning 
+                    index = -1; // to become 0 after incremention
+                }
+            }
+                
+            
+        }
+        
+        //if hashTable is full-> no empty spots && contact not found
+        contact = null; 
+        return contact; // to be checked in main to know tht null indictes "not found" 
     }
     
     
