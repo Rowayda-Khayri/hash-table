@@ -169,27 +169,48 @@ public class Operations {
             
             contact = null;
             
-            //get index of contct in hashTable
+            //get index of contact in hashTable
             //.........
-            int deletedContactIndex ;
+            int deletedContactIndex  ;
             
             deleted = true; //to be checked in main 
             
             //rehashing
             
-            this.rehash(deletedContactIndex);
+            this.rehash(deletedContactIndex , hashTableSize);
+            
+            //save hashTable to the file
+            File file = new File();
+            file.SaveHashTableToFile(hashTable, "hashTable");
+            
         }
 
-        
         
         return deleted;
     }
     
-    public void rehash(int deletedContactIndex){
+    public void rehash(int deletedContactIndex , Contact[] hashTable ,int hashTableSize ){
         
         for(int index = deletedContactIndex + 1 ; //to start from the next index 
                     index != deletedContactIndex ; // to rehash the array only once and avoid entring an infinite loop 
                     index++){
+            
+            if (hashTable[index] ==null || hashTable[index].linearProb == 0) { // there is no contacts to rehash
+                
+                break;
+                
+            }else if(hashTable[index].linearProb == 1){
+                
+//                int rehashedContactIndex = index; 
+                this.insert(hashTableSize, hashTable, hashTable[index]);
+                
+                //delete contact from the old place 
+                hashTable[index] = null; //to be tested
+                
+            }
+            
+            
+            
             
         }
     }
