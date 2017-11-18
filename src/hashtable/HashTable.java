@@ -98,6 +98,18 @@ public class HashTable {
             String name = new String();
             name = reader.next(); // Scans the next token of the input as an contact's name
             
+            
+            boolean deleted; // to get the return value
+            //delete contact 
+            deleted = operationInstance.delete(name, hashTableSize, hashTable);
+            
+            if ( deleted == true ) {
+                System.out.println("The contact has been deleted successfully :) ");
+            }else{
+                System.err.println("This contact doesn't exist!");
+            }
+            
+            
         
     }
        

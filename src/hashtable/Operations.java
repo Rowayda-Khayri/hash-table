@@ -165,13 +165,13 @@ public class Operations {
             deleted = false; //to be checked in main 
         }else{ //found
             
-            //delete contact 
-            
-            contact = null;
-            
             //get index of contact in hashTable
             //.........
             int deletedContactIndex  ;
+            
+            //delete contact 
+            
+            contact = null;
             
             deleted = true; //to be checked in main 
             
@@ -209,7 +209,11 @@ public class Operations {
                 
             }
             
-            
+            if (index == hashTable.length - 1 ) { //reached the end of the array
+
+                //start from the beginning 
+                index = -1; // to become 0 after incremention
+            }
             
             
         }
