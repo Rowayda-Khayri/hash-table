@@ -151,6 +151,49 @@ public class Operations {
         return contact; // to be checked in main to know that null indictes "not found" 
     }
     
+    public boolean delete(String name , int hashTableSize , Contact[] hashTable){
+        
+        boolean deleted ; // to indicate deletion
+        
+        Contact contact = new Contact(); // to put the returned contact in 
+
+        
+        //search for this name in the hash table 
+        contact = this.search(name , hashTableSize , hashTable);
+
+        if (contact == null) { //not found
+            deleted = false; //to be checked in main 
+        }else{ //found
+            
+            //delete contact 
+            
+            contact = null;
+            
+            //get index of contct in hashTable
+            //.........
+            int deletedContactIndex ;
+            
+            deleted = true; //to be checked in main 
+            
+            //rehashing
+            
+            this.rehash(deletedContactIndex);
+        }
+
+        
+        
+        return deleted;
+    }
+    
+    public void rehash(int deletedContactIndex){
+        
+        for(int index = deletedContactIndex + 1 ; //to start from the next index 
+                    index != deletedContactIndex ; // to rehash the array only once and avoid entring an infinite loop 
+                    index++){
+            
+        }
+    }
+    
     
     
     

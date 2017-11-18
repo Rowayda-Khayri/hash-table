@@ -85,12 +85,18 @@ public class HashTable {
             contact = operationInstance.search(name , hashTableSize , hashTable);
             
             if (contact == null) {
-                System.err.println("contct not found!");
+                System.err.println("contact not found!");
             }else{
                 System.out.println("Name : " + contact.name + ", Phone : " + contact.phone);
             }
 
         }else if(operation == 3 ){ //deletion
+            
+            //scan for the contact's name
+            
+            System.out.println("Enter name : ");
+            String name = new String();
+            name = reader.next(); // Scans the next token of the input as an contact's name
             
         
     }
