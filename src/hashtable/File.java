@@ -86,7 +86,7 @@ public class File {
         
         Contact[] hashTable = new Contact[size];
         
-        System.out.println("hash table before reading " + Arrays.toString(hashTable));
+//        System.out.println("hash table before reading " + Arrays.toString(hashTable));
         
         String contact = new String(); // to save 
         
@@ -108,7 +108,7 @@ public class File {
                 new BufferedReader(fileReader);
 
             
-            System.out.println("size of file to read " + size);
+//            System.out.println("size of file to read " + size);
             for(int i = 0 ; i< size ; i++){
                 
                 line = bufferedReader.readLine();

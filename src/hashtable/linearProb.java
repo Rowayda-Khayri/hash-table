@@ -29,7 +29,7 @@ public class linearProb {
         newContact.linearProb = 1; // to indicate that linear prob is applied on this contact // this will help in rehashing 
         
         
-        System.out.println("contact in the hash value index before loop : " + hashTable[hashValue].name);
+//        System.out.println("contact in the hash value index before loop : " + hashTable[hashValue].name);
         
         for(index = hashValue ;index < hashTable.length;index++){
         
@@ -54,7 +54,7 @@ public class linearProb {
         }
      
         
-        System.out.println("contact in the hash value index after loop : " + hashTable[hashValue].name);
+//        System.out.println("contact in the hash value index after loop : " + hashTable[hashValue].name);
         
 
         
