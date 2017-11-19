@@ -7,6 +7,9 @@ package hashtable;
 
 import java.util.*;
 
+//import org.apache.commons.lang;
+
+
 
 /**
  * The operations methods that can be applied on the hash table.
@@ -161,13 +164,20 @@ public class Operations {
         //search for this name in the hash table 
         contact = this.search(name , hashTableSize , hashTable);
 
+//        System.out.println("contact after search : " +contact.name);
+        
         if (contact == null) { //not found
             deleted = false; //to be checked in main 
         }else{ //found
             
             //get index of contact in hashTable
             //.........
-            int deletedContactIndex  ;
+            int deletedContactIndex  =  0;
+            deletedContactIndex=Arrays.asList(hashTable).indexOf(contact);
+//            int deletedContactIndex  =  ArrayUtils.indexOf(hashTable, contact);
+//            int deletedContactIndex  =  1;
+            
+            System.out.println("deletedContactIndex :  " + deletedContactIndex);
             
             //delete contact 
             
@@ -177,7 +187,7 @@ public class Operations {
             
             //rehashing
             
-            this.rehash(deletedContactIndex , hashTableSize);
+            this.rehash(deletedContactIndex , hashTable,hashTableSize);
             
             //save hashTable to the file
             File file = new File();
@@ -199,7 +209,7 @@ public class Operations {
                 
                 break;
                 
-            }else if(hashTable[index].linearProb == 1){
+            }else if(hashTable[index].linearProb == 1){ // or just else ??!
                 
 //                int rehashedContactIndex = index; 
                 this.insert(hashTableSize, hashTable, hashTable[index]);

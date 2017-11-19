@@ -199,7 +199,6 @@ null
 null
 null
 null
-1,1,0
 null
 null
 null
@@ -496,7 +495,6 @@ null
 null
 null
 null
-3,3,0
 null
 null
 null
@@ -686,9 +684,6 @@ null
 null
 null
 null
-Row,45,0
-Row,45,1
-Row,89,1
 null
 null
 null
@@ -881,8 +876,6 @@ null
 null
 null
 null
-2,2,0
-2,2,1
 null
 null
 null
@@ -940,7 +933,14 @@ null
 null
 null
 null
-mi,5,0
+null
+null
+null
+null
+null
+null
+null
+null
 null
 null
 null

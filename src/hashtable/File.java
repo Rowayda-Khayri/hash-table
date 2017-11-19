@@ -43,6 +43,8 @@ public class File {
             // Assume default encoding
             FileWriter fileWriter =
                 new FileWriter(fileName);
+            
+            
 
             //  wrap FileWriter in BufferedWriter
             BufferedWriter bufferedWriter =
