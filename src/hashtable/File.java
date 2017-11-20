@@ -129,8 +129,8 @@ public class File {
                     
                     splittedContact = contact.split(",");
                     
-                    System.out.println(" splittedContact" + Arrays.toString(splittedContact));
-                    System.out.println(" splittedContact[0] + i + hashTable[i]:" + splittedContact[0] + i + hashTable[i]);
+//                    System.out.println(" splittedContact" + Arrays.toString(splittedContact));
+//                    System.out.println(" splittedContact[0] + i + hashTable[i]:" + splittedContact[0] + i + hashTable[i]);
                     
                     //set properties
                     

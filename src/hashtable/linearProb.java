@@ -30,7 +30,7 @@ public class linearProb {
         
         
 //        System.out.println("contact in the hash value index before loop : " + hashTable[hashValue].name);
-        
+
         for(index = hashValue ;index < hashTable.length;index++){
         
             if(hashTable[index] ==null){ 

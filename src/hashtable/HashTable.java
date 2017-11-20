@@ -34,10 +34,10 @@ public class HashTable {
         //save hash table to file 
         
         /****** //comment creating new hash table file to avoid rewriting it *******/
-        File f = new File();
-        String fileName = new String();
-        fileName = "hashTable";
-        f.SaveHashTableToFile(hashTable, fileName);
+//        File f = new File();
+//        String fileName = new String();
+//        fileName = "hashTable";
+//        f.SaveHashTableToFile(hashTable, fileName);
         
                 
         /******************************************************************************/
@@ -53,7 +53,7 @@ public class HashTable {
         int operation = reader.nextInt(); // Scans the next token of the input as an int.
 
         
-        System.out.println("the user choosed : " + operation);
+//        System.out.println("the user choosed : " + operation);
         Operations operationInstance = new Operations();
         
         if(operation ==1){ //insertion
