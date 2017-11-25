@@ -7,6 +7,7 @@ package hashtable;
 
 import java.util.*;
 
+//import org.apache.commons.lang.ArrayUtils;
 //import org.apache.commons.lang;
 
 
@@ -156,7 +157,7 @@ public class Operations {
     
     public boolean delete(String name , int hashTableSize , Contact[] hashTable){
         
-        boolean deleted ; // to indicate deletion
+        boolean deleted = false ; // to indicate deletion
         
         Contact contact = new Contact(); // to put the returned contact in 
 
@@ -177,16 +178,23 @@ public class Operations {
             //get index of contact in hashTable
             //.........
             int deletedContactIndex  =  0;
-            deletedContactIndex=Arrays.asList(hashTable).indexOf(contact);
-//            int deletedContactIndex  =  ArrayUtils.indexOf(hashTable, contact);
-//            int deletedContactIndex  =  1;
             
-            System.out.println("deletedContactIndex :  " + deletedContactIndex);
-            
+            //to get the deleted contact index
+            for(int index = 0 ; index < hashTable.length ; index ++){
+                if (hashTable[index] ==null) {
+//                    System.out.println("entered loop and is null and index = " + index);
+                }else{
+                    if (hashTable[index].name.equals(contact.name)) {
+//                        System.out.println("entered loop and index = " + index);
+                        deletedContactIndex = index;
+                        break;
+                    }
+                }
+            }
             System.out.println("before deletion : " + hashTable[206].name);
             //delete contact 
             
-            hashTable = ArrayUtils.removeElement(hashTable, contact);
+//            hashTable = ArrayUtils.removeElement(hashTable, contact);
 //            contact = null;
             
             deleted = true; //to be checked in main 
@@ -205,6 +213,13 @@ public class Operations {
         return deleted;
     }
     
+    
+    /**
+     *
+     * @param deletedContactIndex
+     * @param hashTable
+     * @param hashTableSize
+     */
     public void rehash(int deletedContactIndex , Contact[] hashTable ,int hashTableSize ){
         
         for(int index = deletedContactIndex + 1 ; //to start from the next index 
