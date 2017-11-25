@@ -194,7 +194,7 @@ public class Operations {
             System.out.println("before deletion : " + hashTable[206].name);
             //delete contact 
             
-//            hashTable = ArrayUtils.removeElement(hashTable, contact);
+            hashTable[deletedContactIndex] = null;
 //            contact = null;
             
             deleted = true; //to be checked in main 
