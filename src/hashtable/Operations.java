@@ -160,6 +160,10 @@ public class Operations {
         
         Contact contact = new Contact(); // to put the returned contact in 
 
+        //read hash table from file 
+        File file = new File();
+        hashTable = file.readhashTable("hashTable", hashTableSize);
+        
         
         //search for this name in the hash table 
         contact = this.search(name , hashTableSize , hashTable);
@@ -179,9 +183,11 @@ public class Operations {
             
             System.out.println("deletedContactIndex :  " + deletedContactIndex);
             
+            System.out.println("before deletion : " + hashTable[206].name);
             //delete contact 
             
-            contact = null;
+            hashTable = ArrayUtils.removeElement(hashTable, contact);
+//            contact = null;
             
             deleted = true; //to be checked in main 
             
@@ -190,7 +196,7 @@ public class Operations {
             this.rehash(deletedContactIndex , hashTable,hashTableSize);
             
             //save hashTable to the file
-            File file = new File();
+//            File file = new File();
             file.SaveHashTableToFile(hashTable, "hashTable");
             
         }
