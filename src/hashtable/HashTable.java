@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hashtable;
 
 import java.util.*;
@@ -52,8 +48,6 @@ public class HashTable {
         System.out.println("3 - Delete Contact ");
         int operation = reader.nextInt(); // Scans the next token of the input as an int.
 
-        
-//        System.out.println("the user choosed : " + operation);
         Operations operationInstance = new Operations();
         
         if(operation ==1){ //insertion

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hashtable;
 
 import java.io.BufferedReader;
@@ -16,22 +12,21 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- *
+ * Write and read from file
  * @author row
  */
 public class File {
     
 /**
- *Save passed hash table in a file.
- * @author row
+ * Save passed hash table in a file.
+ * @param hashTable
+ * @param fileName 
  */
     public void SaveHashTableToFile(Contact[] hashTable, String fileName){
         
         // The name of the file to create
         fileName = fileName + ".txt";
         
-//        hashTable[0].name = "gfgf";
-//        System.out.println("hashTable inside save to file method " + Arrays.toString(hashTable));
         String delimiter1 = new String();
         String delimiter2 = new String();
         
@@ -53,7 +48,6 @@ public class File {
             
             for(int i = 0;i< hashTable.length;i++){
                 
-//                System.out.println("name" + hashTable[i] );
                 //write value 
                 if (hashTable[i] != null) {
                     bufferedWriter.write(hashTable[i].name + delimiter2 +  hashTable[i].phone + delimiter2 +  hashTable[i].linearProb + delimiter1);
@@ -79,16 +73,15 @@ public class File {
         
     }
     
-    
     /**
-     *Read hash table from file
-     * @author row
+     * Read hash table from file
+     * @param fileName
+     * @param size
+     * @return 
      */
     public Contact[] readhashTable(String fileName , int size){
         
         Contact[] hashTable = new Contact[size];
-        
-//        System.out.println("hash table before reading " + Arrays.toString(hashTable));
         
         String contact = new String(); // to save 
         
@@ -110,27 +103,19 @@ public class File {
                 new BufferedReader(fileReader);
 
             
-//            System.out.println("size of file to read " + size);
             for(int i = 0 ; i< size ; i++){
                 
                 line = bufferedReader.readLine();
                 
                 
-//                System.out.println("line ? : " + line);
-//                while( line != null) {
-//                if(line != null) {
                 if(!line.equals("null")) { // "null" not null -_-
                 
-//                    System.out.println("line ??" + line);
                     contact = line;
                     
                     //split contact with ',' to get each property 
                     String splittedContact[] = new String[3];
                     
                     splittedContact = contact.split(",");
-                    
-//                    System.out.println(" splittedContact" + Arrays.toString(splittedContact));
-//                    System.out.println(" splittedContact[0] + i + hashTable[i]:" + splittedContact[0] + i + hashTable[i]);
                     
                     //set properties
                     

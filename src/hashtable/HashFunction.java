@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hashtable;
 
 /**
@@ -12,9 +8,11 @@ package hashtable;
 public class HashFunction {
     
     /**
- * Hash function that receives contact name and returns the hash value 
- * @author row
- */
+     * Hash function that receives contact name and returns the hash value
+     * @param key
+     * @param table_size
+     * @return 
+     */
     public static int calc_hash( String key, int table_size) {
         
         int i, l = key.length();

@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hashtable;
 
 import java.util.*;
-
-//import org.apache.commons.lang.ArrayUtils;
-//import org.apache.commons.lang;
 
 
 
@@ -21,7 +14,8 @@ public class Operations {
     /**
      * Insert a new contact to the hash table.
      * @param hashTableSize
-     * @param hashTable 
+     * @param hashTable
+     * @param newContact 
      */
     public void insert( int hashTableSize , Contact[] hashTable , Contact newContact){
         
@@ -176,26 +170,25 @@ public class Operations {
         }else{ //found
             
             //get index of contact in hashTable
-            //.........
+            
             int deletedContactIndex  =  0;
             
             //to get the deleted contact index
             for(int index = 0 ; index < hashTable.length ; index ++){
-                if (hashTable[index] ==null) {
-//                    System.out.println("entered loop and is null and index = " + index);
+                if (hashTable[index] ==null) { 
+                    //do nothing 
                 }else{
                     if (hashTable[index].name.equals(contact.name)) {
-//                        System.out.println("entered loop and index = " + index);
+                        
                         deletedContactIndex = index;
                         break;
                     }
                 }
             }
-            System.out.println("before deletion : " + hashTable[206].name);
+            
             //delete contact 
             
             hashTable[deletedContactIndex] = null;
-//            contact = null;
             
             deleted = true; //to be checked in main 
             
@@ -204,7 +197,6 @@ public class Operations {
             this.rehash(deletedContactIndex , hashTable,hashTableSize);
             
             //save hashTable to the file
-//            File file = new File();
             file.SaveHashTableToFile(hashTable, "hashTable");
             
         }
@@ -215,7 +207,7 @@ public class Operations {
     
     
     /**
-     *
+     * Loop over the hash table and rehash only contacts that were inserted with linear probing 
      * @param deletedContactIndex
      * @param hashTable
      * @param hashTableSize
@@ -232,7 +224,6 @@ public class Operations {
                 
             }else if(hashTable[index].linearProb == 1){ // or just else ??!
                 
-//                int rehashedContactIndex = index; 
                 this.insert(hashTableSize, hashTable, hashTable[index]);
                 
                 //delete contact from the old place 
